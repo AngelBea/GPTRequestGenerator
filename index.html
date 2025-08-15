@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>FARM Art Request JSON Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<main class="container">
+    <h1>FARM Art Request JSON Generator</h1>
+
+    <section class="grid two-col">
+        <div>
+            <label for="category">Categoría</label>
+            <select id="category" aria-label="Categoría">
+            </select>
+        </div>
+
+        <div>
+            <label for="generation_target">Generation Target</label>
+            <select id="generation_target" aria-label="Generation Target"></select>
+        </div>
+    </section>
+    <label for="asset_id">Asset ID</label>
+    <input id="asset_id" placeholder="p.ej. env_forest_ruins_01" />
+
+    <label for="brief">Brief</label>
+    <textarea id="brief" rows="3" placeholder="Descripción rápida de lo que quieres generar"></textarea>
+    <section class="grid three-col">
+        <div>
+            <label for="camera_mode">Modo de cámara</label>
+            <select id="camera_mode" aria-label="Modo de cámara"></select>
+        </div>
+
+        <div>
+            <label for="camera_angle">Ángulo</label>
+            <select id="camera_angle" aria-label="Ángulo"></select>
+        </div>
+
+        <div>
+            <label for="aspect_ratio">Aspect Ratio</label>
+            <select id="aspect_ratio" aria-label="Aspect Ratio"></select>
+        </div>
+    </section>
+
+    <h2>Specific Category Fields</h2>
+    <section id="category_specific" class="grid three-col"></section>
+
+    <section class="grid two-col">
+        <div>
+            <label for="must_input">Must Include</label>
+            <div class="pill-input">
+                <input id="must_input" data-list-id="must_list" placeholder="Añadir elemento..." />
+                <button type="button" class="add-btn" data-input-id="must_input"  data-target="must" aria-label="Añadir a Must Include">+</button>
+            </div>
+            <div id="must_list" class="pill-container" aria-live="polite"></div>
+        </div>
+
+        <div>
+            <label for="avoid_input">Avoid</label>
+            <div class="pill-input">
+                <input id="avoid_input" data-list-id="avoid_list" placeholder="Añadir elemento..." />
+                <button type="button" class="add-btn" data-input-id="avoid_input" aria-label="Añadir a Avoid">+</button>
+            </div>
+            <div id="avoid_list" class="pill-container" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <div class="row actions">
+        <button id="genBtn" type="button">Generate JSON</button>
+        <button id="copyBtn" type="button" class="copy-btn" disabled>Copy to Clipboard</button>
+        <span id="status" class="status" role="status" aria-live="polite"></span>
+    </div>
+
+    <label for="output" class="sr-only">JSON generado</label>
+    <textarea id="output" rows="40" readonly></textarea>
+</main>
+
+<script src="js/app.js" type="module"></script>
+</body>
+</html>

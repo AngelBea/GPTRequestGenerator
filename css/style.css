@@ -1,0 +1,173 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+    background: #0f0f10;
+    color: #e9e9ea;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 32px auto;
+    padding: 0 20px 40px;
+}
+
+h1 {
+    margin: 0 0 12px;
+    letter-spacing: 0.2px;
+}
+
+h2 {
+    margin: 26px 0 8px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input, select, textarea, button {
+    font: inherit;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2d;
+    background: #151517;
+    color: #e9e9ea;
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder { color: #8b8b93; }
+
+.grid.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .grid.two-col { grid-template-columns: 1fr; }
+}
+
+.row.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+button {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #0aa3a3;
+    color: white;
+}
+
+button.copy-btn { background: #ff9800; }
+
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.status {
+    min-height: 1em;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+#output {
+    width: 100%;
+    min-height: 280px;
+    background: #121213;
+    border: 1px solid #26262a;
+    border-radius: 8px;
+    padding: 12px;
+    color: #e9e9ea;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    line-height: 1.35;
+    white-space: pre; /* mantiene el formato del JSON */
+    tab-size: 2;
+}
+
+.pill-input {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.pill-input input {
+    flex: 1;
+}
+
+.add-btn {
+    background: #0aa3a3;
+    border: none;
+    color: white;
+    padding: 0 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #099090;
+}
+
+.pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pill {
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}
+
+.pill button {
+    background: transparent;
+    border: none;
+    color: #ff8a80;
+    font-weight: bold;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.input-error {
+    border-color: #ff8a80 !important;
+    box-shadow: 0 0 0 2px rgba(255, 138, 128, 0.4);
+    animation: shake 0.3s ease-in-out;
+}
+
+.grid.three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 1100px) {
+    .grid.three-col { grid-template-columns: 1fr; }
+}
